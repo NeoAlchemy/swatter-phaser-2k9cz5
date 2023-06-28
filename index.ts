@@ -21,19 +21,15 @@ class Example extends Phaser.Scene {
   preload() {
     this.load.baseURL = 'https://neoalchemy.github.io/swatter-phaser-2k9cz5/';
     this.load.image('swatter', 'static/assets/swatter.png');
-    //this.load.image('swatter', url);
+    this.load.image('bug', 'static/assets/bug.png');
   }
 
   create() {
     /* Create BUG */
-    this.bug = this.physics.add.sprite(50, 50, null);
-    this.bug.body.setCircle(BUG_RADIUS);
-    this.bug.setTint(BUG_COLOR);
+    this.bug = this.physics.add.sprite(50, 50, 'bug');
 
     /* CREATE SWATTER */
     this.swatter = this.physics.add.sprite(100, 100, 'swatter');
-    this.swatter.body.setSize(SWATTER_WIDTH, SWATTER_HEIGHT);
-    this.swatter.setTint(SWATTER_COLOR);
 
     /* MOVE SWATTER */
     this.input.on('pointermove', this.moveSwatter, this);
@@ -43,7 +39,7 @@ class Example extends Phaser.Scene {
   private bug: Phaser.Physics.Arcade.Sprite;
 
   update() {
-    this.physics.overlap(this.bug, this.swatter, this.squash);
+    this.physics.overlap(this.bug, this.swatter, this.squash, null, this);
   }
 
   moveSwatter(pointerEvent: PointerEvent) {
@@ -53,8 +49,8 @@ class Example extends Phaser.Scene {
 
   squash() {
     console.log('sqaush');
-    var randX = Phaser.Math.Between(0, Number(this.game.config.width));
-    var randY = Phaser.Math.Between(0, Number(this.game.config.height));
+    var randX = Phaser.Math.Between(0, 400);
+    var randY = Phaser.Math.Between(0, 400);
     this.bug.setX(randX);
     this.bug.setY(randY);
   }
