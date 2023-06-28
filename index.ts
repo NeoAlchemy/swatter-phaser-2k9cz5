@@ -3,14 +3,6 @@ import Phaser from 'phaser';
 // Import stylesheets
 import './style.css';
 
-/* ------------------------------ GAME MECHANICS ---------------------------- */
-const SWATTER_COLOR: number = 0xffffff;
-const SWATTER_WIDTH: number = 40;
-const SWATTER_HEIGHT: number = 40;
-const BUG_COLOR: number = 0xff0000;
-const BUG_RADIUS: number = 10;
-const SCORE_COLOR: number = 0xffffff;
-
 /* --------------------------------- SCENE ------------------------------- */
 
 class Example extends Phaser.Scene {
@@ -48,7 +40,6 @@ class Example extends Phaser.Scene {
   }
 
   squash() {
-    console.log('sqaush');
     var randX = Phaser.Math.Between(0, 400);
     var randY = Phaser.Math.Between(0, 400);
     this.bug.setX(randX);
