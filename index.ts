@@ -20,7 +20,7 @@ class Example extends Phaser.Scene {
 
   preload() {
     this.load.baseURL = 'https://neoalchemy.github.io/swatter-phaser-2k9cz5/';
-    this.load.image('swatter', 'static/assets/swatter.png');
+    this.load.image('swatter', 'static/assets/swatter-v2.png');
     this.load.image('bug', 'static/assets/bug.png');
   }
 
