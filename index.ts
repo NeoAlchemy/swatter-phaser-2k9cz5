@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-//import * as url from './static/assets/swatter.png';
 
 // Import stylesheets
 import './style.css';
@@ -20,7 +19,8 @@ class Example extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('swatter', './static/assets/swatter.png');
+    this.load.baseURL = 'https://neoalchemy.github.io/swatter-phaser-2k9cz5/';
+    this.load.image('swatter', 'static/assets/swatter.png');
     //this.load.image('swatter', url);
   }
 
